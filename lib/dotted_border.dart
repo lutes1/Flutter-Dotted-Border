@@ -42,6 +42,10 @@ class DottedBorder extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
+         Padding(
+          padding: padding,
+          child: child,
+        ),
         Positioned.fill(
           child: CustomPaint(
             painter: _DashPainter(
@@ -55,11 +59,7 @@ class DottedBorder extends StatelessWidget {
               strokeCap: strokeCap,
             ),
           ),
-        ),
-        Padding(
-          padding: padding,
-          child: child,
-        ),
+        )
       ],
     );
   }
